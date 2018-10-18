@@ -1,7 +1,17 @@
 #import requests
 import random
-
 import json
+
+import urllib, json
+
+
+def request_quote2():
+    url = "https://raw.githubusercontent.com/jletienne/smart_mirror/master/static/quotes.json"
+    response = urllib.urlopen(url)
+    data = json.load(response)
+    filmNumber = random.randrange(0,len(data))
+    return data[filmNumber]
+
 
 
 
